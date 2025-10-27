@@ -5,7 +5,7 @@ A comprehensive RL portfolio project implementing and comparing various deep rei
 ## Project Status
 
 - [x] **Phase 1**: Environment Setup & Exploration
-- [ ] **Phase 2**: Data Collection & Baseline Performance
+- [x] **Phase 2**: Data Collection & Baseline Performance
 - [ ] **Phase 3**: Preprocessing & Feature Engineering
 - [ ] **Phase 4**: DQN Agent - Part 1 (Basic Implementation)
 - [ ] **Phase 5**: DQN Agent - Part 2 (Improvements)
@@ -26,17 +26,36 @@ pip install -r requirements.txt
 ## Phase 1: Environment Setup & Exploration
 
 Run the initial exploration:
-
 ```bash
 python src/phase1_environment_setup.py
 ```
 
 This will:
-
 - Load the Space Invaders environment
-- Run a random agent
+- Run a random agent for 5 episodes
 - Display environment statistics
 - Save sample frames
+
+**Results**: Baseline established with mean reward of 119.0 ± 79.0
+
+## Phase 2: Data Collection & Baseline Performance
+
+Run comprehensive baseline data collection:
+```bash
+python src/phase2_baseline_collection.py
+```
+
+This will:
+- Run random agent for 100 episodes
+- Collect detailed performance metrics
+- Generate comprehensive statistical analysis
+- Create visualization dashboards
+- Save baseline data for comparison
+
+**Results**: 
+- Mean Reward: 146.95 ± 93.14
+- Mean Episode Length: 504.4 ± 155.9
+- Coefficient of Variation: 0.63 (high variance)
 
 ## Project Structure
 
