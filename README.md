@@ -7,7 +7,7 @@ A comprehensive RL portfolio project implementing and comparing various deep rei
 - [x] **Phase 1**: Environment Setup & Exploration
 - [x] **Phase 2**: Data Collection & Baseline Performance
 - [x] **Phase 3**: Preprocessing & Feature Engineering
-- [ ] **Phase 4**: DQN Agent - Part 1 (Basic Implementation)
+- [x] **Phase 4**: DQN Agent - Part 1 (Basic Implementation)
 - [ ] **Phase 5**: DQN Agent - Part 2 (Improvements)
 - [ ] **Phase 6**: Alternative Algorithms
 - [ ] **Phase 7**: Hyperparameter Optimization
@@ -88,6 +88,43 @@ This will:
 - Follows DQN Nature paper methodology
 
 **Preprocessing Module**: `src/preprocessing.py` provides reusable wrappers for all phases
+
+## Phase 4: DQN Agent - Part 1 (Basic Implementation)
+
+Train a basic DQN agent:
+
+```bash
+python src/phase4_train_dqn.py
+```
+
+This will:
+
+- Train DQN agent for 1M steps
+- Implement experience replay with 100k buffer
+- Use epsilon-greedy exploration (1.0 → 0.01)
+- Save checkpoints every 100k steps
+- Evaluate agent every 50k steps
+- Generate training curves and visualizations
+
+**Architecture**:
+
+- CNN: 3 conv layers (32→64→64 filters) + 2 FC layers (512→n_actions)
+- Optimizer: Adam with learning rate 1e-4
+- Loss: Huber loss with gradient clipping
+- Target network updated every 10k steps
+- Follows Nature DQN paper (Mnih et al., 2015)
+
+**Training Parameters**:
+
+- Total steps: 1,000,000
+- Batch size: 32
+- Replay buffer: 100,000 transitions
+- Learning starts: 50,000 steps
+- Gamma (discount): 0.99
+
+**Note**: Training will take several hours on CPU, much faster with GPU.
+
+**Analysis**: Use `notebooks/phase4_dqn_training.ipynb` to analyze results
 
 ## Project Structure
 
