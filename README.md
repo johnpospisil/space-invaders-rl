@@ -517,6 +517,10 @@ space_invaders_rl/
 └── requirements.txt        # Dependencies
 ```
 
-## Author
+## 📬 Contact
 
-Data Science Portfolio Project - 2025
+For questions, suggestions, or collaboration opportunities, please reach out through GitHub issues or direct contact.
+
+📩 **Email**: [john@johnpospisil.com](mailto:john@johnpospisil.com)  
+🐦 **Twitter/X**: [@audiofreak7](https://x.com/audiofreak7)  
+🔗 **LinkedIn**: [John Pospisil](https://www.linkedin.com/in/johnpospisil/)
