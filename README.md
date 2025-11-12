@@ -7,8 +7,8 @@ A comprehensive RL portfolio project implementing and comparing various deep rei
 - [x] **Phase 1**: Environment Setup & Exploration
 - [x] **Phase 2**: Data Collection & Baseline Performance
 - [x] **Phase 3**: Preprocessing & Feature Engineering
-- [x] **Phase 4**: DQN Agent - Part 1 (Basic Implementation)
-- [ ] **Phase 5**: DQN Agent - Part 2 (Improvements)
+- [x] **Phase 4**: DQN Agent - Part 1 (Basic Implementation) - **506 max reward**
+- [x] **Phase 5**: DQN Agent - Part 2 (Improvements) - Ready to train!
 - [ ] **Phase 6**: Alternative Algorithms
 - [ ] **Phase 7**: Hyperparameter Optimization
 - [ ] **Phase 8**: Advanced Analysis & Visualization
@@ -125,6 +125,37 @@ This will:
 **Note**: Training will take several hours on CPU, much faster with GPU.
 
 **Analysis**: Use `notebooks/phase4_dqn_training.ipynb` to analyze results
+
+**Phase 4 Results**: Max reward 506 (244% improvement over baseline!)
+
+## Phase 5: DQN Improvements
+
+Train improved DQN with multiple enhancements:
+
+```bash
+python src/phase5_train_improved_dqn.py
+```
+
+Or for quick test (~30 min):
+
+```bash
+python run_phase5_quick_test.py
+```
+
+**Improvements**:
+
+1. **Double DQN**: Reduces Q-value overestimation by using online network for action selection
+2. **Dueling Networks**: Separates value function V(s) and advantage function A(s,a)
+3. **Prioritized Experience Replay**: Samples important transitions more frequently
+
+**Architecture**:
+
+- Dueling network with separate value and advantage streams
+- Same CNN backbone as Phase 4
+- Prioritized replay with α=0.6, β annealing from 0.4 to 1.0
+- All Phase 4 hyperparameters maintained for fair comparison
+
+**Expected Results**: 10-30% improvement over Phase 4 (~560-660 reward)
 
 ## Project Structure
 
