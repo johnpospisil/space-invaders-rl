@@ -19,6 +19,12 @@ A comprehensive RL portfolio project implementing and comparing state-of-the-art
 | **Improved DQN** | **364.00** | 306.56      | **+148%**   | ✅     |
 | **PPO** 🏆       | **561.50** | **375.43**  | **+282%**   | ✅     |
 
+### Algorithm Comparison
+
+![Comprehensive Analysis](src/outputs/phase8/comprehensive_analysis.png)
+
+_Comparative analysis across all three algorithms showing learning curves, performance distributions, and statistical comparisons. PPO (red) demonstrates superior performance with the highest maximum reward (561.50) and strong mean performance (375.43)._
+
 ## Project Status
 
 - [x] **Phase 1**: Environment Setup & Exploration
@@ -77,6 +83,31 @@ while not done:
 
 print(f"Episode reward: {total_reward}")
 ```
+
+## 📈 Visual Results
+
+This project implements three deep RL algorithms with comprehensive analysis and interpretability studies:
+
+<table>
+<tr>
+<td width="50%">
+
+**Algorithm Performance Comparison**
+
+All three algorithms significantly outperformed the random baseline, with PPO achieving the best results (561.50 max reward, +282% improvement).
+
+</td>
+<td width="50%">
+
+**Learned Strategy**
+
+The agent learned an aggressive offensive strategy, spending 67.9% of time using RIGHTFIRE and focusing attention on enemies and projectiles.
+
+</td>
+</tr>
+</table>
+
+_See detailed visualizations in Phase 8 (Comprehensive Analysis) and Phase 9 (Model Interpretability) sections below._
 
 ## Setup
 
@@ -147,6 +178,10 @@ This will:
 - Reward clipping to {-1, 0, 1}
 - Normalization to [0, 1]
 - Follows DQN Nature paper methodology
+
+![Preprocessing Pipeline](outputs/phase3/preprocessing_steps.png)
+
+_Visualization of the preprocessing pipeline transforming raw 210×160×3 RGB frames into 84×84 grayscale observations, with frame stacking to capture temporal information. This dimensionality reduction (72%) enables efficient learning while preserving critical game information._
 
 **Preprocessing Module**: `src/preprocessing.py` provides reusable wrappers for all phases
 
@@ -261,6 +296,10 @@ python run_phase6_quick_test.py
 
 **Results**: **561.50 max reward** - BEST PERFORMANCE! (+282% over baseline, beats all DQN variants)
 
+![PPO Training Results](src/outputs/phase6/training_results.png)
+
+_PPO training progression showing consistent improvement over 1M steps. The agent achieves the highest performance among all tested algorithms, with strong learning stability and superior final performance._
+
 ## Phase 8: Advanced Analysis & Visualization
 
 Comprehensive comparison of all algorithms:
@@ -324,6 +363,18 @@ python src/phase9_interpretability.py
 - `outputs/phase9/activations/cnn_activations.png` - Feature detection
 - `outputs/phase9/policy_analysis/policy_behavior.png` - Action distribution
 - `outputs/phase9/key_moments.png` - Critical decision points
+
+### Policy Behavior Analysis
+
+![Policy Behavior](src/outputs/phase9/policy_analysis/policy_behavior.png)
+
+_The trained PPO agent demonstrates a highly aggressive offensive strategy, spending 67.9% of its time using RIGHTFIRE (moving right while shooting). This clear action preference reveals the agent learned that constant offense is the optimal strategy for maximizing reward._
+
+### Saliency Maps: Agent Attention
+
+![Saliency Maps](src/outputs/phase9/saliency_maps/saliency_analysis.png)
+
+_Gradient-based saliency maps reveal what pixels influence the agent's decisions. The heat maps show the agent pays attention to enemy positions, incoming projectiles, and its own ship location - demonstrating it learned relevant game features without explicit instruction._
 
 ## Expected Results\*\*: 10-30% improvement over Phase 4 (~560-660 reward)
 
