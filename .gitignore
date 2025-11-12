@@ -30,7 +30,6 @@ wheels/
 # Data and models
 data/
 models/
-outputs/
 logs/
 runs/
 *.pkl
